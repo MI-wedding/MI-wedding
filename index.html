@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cinzel', serif;
+      background-color: #f3f0e0;
+      color: #333;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Conteneur pour l'ornement divisé */
+    .ornament-container {
+      position: relative;
+      width: 600px;
+      height: 600px;
+    }
+
+    /* Diviser l'image en deux parties */
+    .ornament-left, .ornament-right {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      background-image: url('./testimagesmosaique.webp'); /* Image générée */
+      background-size: cover;
+      background-position: center;
+      z-index: 10;
+      animation: open-ornament 3s ease-in-out forwards;
+    }
+
+    /* Partie gauche */
+    .ornament-left {
+      left: 0;
+      background-position: left;
+    }
+
+    /* Partie droite */
+    .ornament-right {
+      right: 0;
+      background-position: right;
+    }
+
+    /* Contenu caché qui apparaît */
+    .container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: content-reveal 3s ease-out forwards 3s;
+    }
+
+    header {
+      background-color: #d4af37;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .couple {
+      font-size: 2.5em;
+    }
+
+    .date {
+      font-size: 1.8em;
+    }
+
+    .qr-section {
+      margin: 30px 0;
+      background-color: #e9c46a;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .qr-section img {
+      width: 150px;
+    }
+
+    .menu {
+      background-color: #d4af37;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .menu ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .menu ul li {
+      font-size: 1.5em;
+      color: #fff;
+      margin: 10px 0;
+    }
+
+    /* Animations */
+    @keyframes open-ornament {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+    }
+
+    .ornament-right {
+      animation: open-ornament-right 3s ease-in-out forwards;
+    }
+
+    @keyframes open-ornament-right {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+
+    @keyframes content-reveal {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="ornament-container">
+    <div class="ornament-left"></div>
+    <div class="ornament-right"></div>
+
+    <div class="container">
+      <header>
+        <h1>Wedding Invitation</h1>
+        <p class="couple">Ilyasse &amp; Mariam </p>
+        <p class="date">Save the Date: <strong>June 10, 2024</strong></p>
+      </header>
+
+      <section class="qr-section">
+        <p>Scan the QR code below to find the wedding location</p>
+        <img src="qrcode.png" alt="QR Code for location">
+      </section>
+
+      <section class="menu">
+        <h2>Wedding Menu</h2>
+        <ul>
+          <li>Appetizers: Mezze (Hummus, Baba Ghanoush, Tabbouleh)</li>
+          <li>Main Course: Lamb Tagine with Couscous</li>
+          <li>Dessert: Baklava and Mint Tea</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
