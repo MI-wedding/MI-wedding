@@ -14,6 +14,10 @@
     body {
       font-family: 'Cinzel', serif;
       background-color: #f3f0e0;
+      background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/marble_2.png'); /* Touche subtile de marbre */
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
       color: #333;
       height: 100vh;
       display: flex;
@@ -25,16 +29,16 @@
     /* Conteneur pour l'ornement divisé */
     .ornament-container {
       position: relative;
-      width: 600px;
-      height: 600px;
+      width: 100vw;
+      height: 100vh;
     }
 
-    /* Diviser l'image en deux parties */
+    /* Diviser l'image en deux parties, couvrant toute la page */
     .ornament-left, .ornament-right {
       position: absolute;
       width: 50%;
       height: 100%;
-      background-image: url('./testimagesmosaique.webp'); /* Image générée */
+      background-image: url('./testimagesmosaique.webp'); /* Image générée (mosaïque dorée) */
       background-size: cover;
       background-position: center;
       z-index: 10;
@@ -69,52 +73,72 @@
     }
 
     header {
-      background-color: #d4af37;
-      color: #fff;
+      text-align: center;
       padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     h1 {
       font-size: 3em;
       margin-bottom: 10px;
+      color: #d4af37; /* Doré */
     }
 
     .couple {
       font-size: 2.5em;
+      color: #555;
     }
 
     .date {
       font-size: 1.8em;
+      color: #e9c46a;
     }
 
     .qr-section {
-      margin: 30px 0;
-      background-color: #e9c46a;
-      padding: 20px;
+      margin: 20px 0;
+      padding: 15px;
+      background-color: rgba(255, 255, 255, 0.1); /* Fond léger et transparent */
       border-radius: 10px;
     }
 
     .qr-section img {
       width: 150px;
+      border-radius: 10px;
     }
 
     .menu {
-      background-color: #d4af37;
       padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
     }
 
     .menu ul {
       list-style-type: none;
       padding: 0;
+      display: flex;
+      justify-content: space-around;
     }
 
     .menu ul li {
-      font-size: 1.5em;
-      color: #fff;
-      margin: 10px 0;
+      font-size: 1.3em;
+      color: #d4af37; /* Couleur dorée */
+      margin: 0 10px;
+      padding: 10px;
+    }
+
+    /* Pour les images */
+    .wedding-images {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .wedding-images img {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 2px solid #d4af37; /* Bordure dorée autour des images */
     }
 
     /* Animations */
@@ -163,7 +187,7 @@
     <div class="container">
       <header>
         <h1>Wedding Invitation</h1>
-        <p class="couple">Ilyasse &amp; Mariam </p>
+        <p class="couple">Ilyasse &amp; Mariam</p>
         <p class="date">Save the Date: <strong>June 10, 2024</strong></p>
       </header>
 
@@ -175,10 +199,16 @@
       <section class="menu">
         <h2>Wedding Menu</h2>
         <ul>
-          <li>Appetizers: Mezze (Hummus, Baba Ghanoush, Tabbouleh)</li>
-          <li>Main Course: Lamb Tagine with Couscous</li>
-          <li>Dessert: Baklava and Mint Tea</li>
+          <li>Mezze: Hummus, Tabbouleh</li>
+          <li>Lamb Tagine</li>
+          <li>Baklava & Mint Tea</li>
         </ul>
+      </section>
+
+      <section class="wedding-images">
+        <img src="image1.jpg" alt="Bride and Groom">
+        <img src="image2.jpg" alt="Wedding Venue">
+        <img src="image3.jpg" alt="Wedding Rings">
       </section>
     </div>
   </div>
